@@ -3,16 +3,99 @@
 }
 
 body {
-  font-family: 'Roobert TRIAL', sans-serif; /* Use the font in your styles */
+  font-family: 'Roobert TRIAL', sans-serif; 
+  padding: 40px 60px;
+}
+
+/* NAV */
+.header__nav-home {
+max-width: 1920px;
+max-height: 64px;
+}
+
+.header__nav--rowStyle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+}
+
+.header__nav-style {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__nav-skintric {
+  color: #0a0a0a;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.header__nav-intro {
+  color: #737373;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.header__nav-button {
+  color: #fafafa;
+  font-size: 14px;
+  background-color: #171717;
+  padding: 8px 16px;
+  font-weight: 500;
+  border-radius: 8px;
+}
+
+/* Center Home Page */
+
+.sophisticatedSkincare__header-home 
+{
+  flex-direction: column;
+  font-weight: 300;
+  font-size: 128px;
+  text-align: center;
 }
 
 .sophisticatedSkincare__header-home 
 {
+  margin-top: 361px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 680px;
-  height: 240px;
-  top: 361px;
-  left: 620px;
+  flex-direction: column;
+}
+
+.sophisticatedSkincare__header-font1 {
+  font-weight: 300;
+  font-size: 128px;
+  text-align: center;
+}
+
+.sophisticatedSkincare__header-font2 {
+  font-weight: 300;
+  font-size: 128px;
+  text-align: center;
+}
+
+/* Form Page */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+input {
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+button {
+  margin: 10px;
+  padding: 10px 20px;
+}
+
+.error {
+  color: red;
 }
