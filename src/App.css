@@ -30,6 +30,7 @@ max-height: 64px;
   color: #0a0a0a;
   font-size: 12px;
   font-weight: 700;
+  cursor: pointer;
 }
 
 .header__nav-intro {
@@ -45,20 +46,16 @@ max-height: 64px;
   padding: 8px 16px;
   font-weight: 500;
   border-radius: 8px;
+  cursor: pointer;
 }
 
 /* Center Home Page */
 
 .sophisticatedSkincare__header-home 
 {
-  flex-direction: column;
   font-weight: 300;
   font-size: 128px;
   text-align: center;
-}
-
-.sophisticatedSkincare__header-home 
-{
   margin-top: 361px;
   display: flex;
   flex-direction: column;
@@ -75,6 +72,67 @@ max-height: 64px;
   font-size: 128px;
   text-align: center;
 }
+
+/* Buttons and Design - Home Page */
+
+.header-line-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 200px;
+}
+
+.diamond-left {
+  width: 602px;
+  height: 602px;
+  top: 179px;
+  border: 2px solid #a0a4ab;
+  border-style: dashed;
+  position: absolute;
+  transform: rotate(45deg); 
+  left: -400px;
+}
+
+.diamond-right {
+  width: 602px;
+  height: 602px;
+  top: 179px;
+  border: 2px dashed #a0a4ab;
+  position: absolute;
+  transform: rotate(45deg);
+  right: -400px; 
+}
+
+.discover__button-left {
+width: 150px;
+height: 44px;
+margin-top: 300px;
+position: absolute;
+left: -30px;
+}
+
+.takeTest__button-right {
+  width: 140px;
+  height: 44px;
+  margin-top: 300px;
+  position: absolute;
+  right: -30px;
+  cursor: pointer;
+}
+
+/* Paragraph Home Page */
+.skinstric__home-paragraph {
+  width: 316px;
+  height: 72px;
+  padding-top: 300px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  
+}
+
 
 /* Form Page */
 .form-container {
