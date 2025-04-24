@@ -43,6 +43,7 @@ const Form = () => {
   };
 
   return (
+    <>
     <div className="form-container">
       <h2>Tell us about yourself</h2>
       <input
@@ -63,6 +64,7 @@ const Form = () => {
         <button onClick={handleSubmit}>Proceed</button>
       </div>
     </div>
+    </>
   );
 };
 

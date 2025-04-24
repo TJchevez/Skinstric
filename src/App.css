@@ -51,26 +51,43 @@ max-height: 64px;
 
 /* Center Home Page */
 
-.sophisticatedSkincare__header-home 
-{
+.sophisticatedSkincare__header-home {
   font-weight: 300;
   font-size: 128px;
-  text-align: center;
   margin-top: 361px;
   display: flex;
   flex-direction: column;
+  will-change: transform;
+  position: relative;
+  z-index: 2;
+  will-change: transform;
+  text-align: center;
+  align-items: center;
+}
+
+.align-left {
+  text-align: left;
+  align-items: flex-start;
+}
+
+.align-right {
+  text-align: right;
+  align-items: flex-end;
+}
+
+.align-center {
+  text-align: center;
+  align-items: center;
 }
 
 .sophisticatedSkincare__header-font1 {
   font-weight: 300;
   font-size: 128px;
-  text-align: center;
 }
 
 .sophisticatedSkincare__header-font2 {
   font-weight: 300;
   font-size: 128px;
-  text-align: center;
 }
 
 /* Buttons and Design - Home Page */
@@ -84,41 +101,53 @@ max-height: 64px;
 }
 
 .diamond-left {
+  position: absolute;
   width: 602px;
   height: 602px;
   top: 179px;
   border: 2px solid #a0a4ab;
   border-style: dashed;
-  position: absolute;
-  transform: rotate(45deg); 
+  transform: rotate(45deg);
   left: -400px;
+  z-index: 1;
 }
 
 .diamond-right {
+  position: absolute;
   width: 602px;
   height: 602px;
   top: 179px;
   border: 2px dashed #a0a4ab;
-  position: absolute;
   transform: rotate(45deg);
-  right: -400px; 
+  right: -400px;
+  z-index: 1;
 }
 
 .discover__button-left {
-width: 150px;
-height: 44px;
-margin-top: 300px;
-position: absolute;
-left: -30px;
+  position: absolute;
+  width: 150px;
+  height: 44px;
+  margin-top: 300px;
+  left: 0px;
+  z-index: 1;
 }
 
 .takeTest__button-right {
+  position: absolute;
   width: 140px;
   height: 44px;
   margin-top: 300px;
-  position: absolute;
-  right: -30px;
+  right: 0px;
   cursor: pointer;
+  z-index: 1;
+}
+
+.diamond-left,
+.diamond-right,
+.discover__button-left,
+.takeTest__button-right {
+  transition: opacity 0.3s ease;
+  opacity: 1;
 }
 
 /* Paragraph Home Page */
