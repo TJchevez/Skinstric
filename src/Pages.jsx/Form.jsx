@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import './App.css';
+import '../App.css';
+import Nav from "../Components.jsx/Nav";
 
 const Form = () => {
   const [name, setName] = useState('');
@@ -44,6 +45,7 @@ const Form = () => {
 
   return (
     <>
+    <Nav />
     <div className="form-container">
       <h2>Tell us about yourself</h2>
       <input

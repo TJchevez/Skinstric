@@ -82,14 +82,16 @@ function Home() {
 
 <div className="diamond-right" ref={diamondRightRef}></div>
 
-<img
-  src={takeTestButton}
-  alt="Take Test"
-  className="takeTest__button-right"
-  ref={takeTestBtnRef}
-/>
-
+<Link to="/form">
+  <img
+    src={takeTestButton}
+    alt="Take Test"
+    className="takeTest__button-right"
+    ref={takeTestBtnRef}
+  />
+</Link>
       </div>
+
 
       <p className="skinstric__home-paragraph">
         Skinstric developed an A.I. that creates a
