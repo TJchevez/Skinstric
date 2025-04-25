@@ -82,7 +82,7 @@ function Home() {
 
 <div className="diamond-right" ref={diamondRightRef}></div>
 
-<Link to="/form">
+<Link to="/Introduction">
   <img
     src={takeTestButton}
     alt="Take Test"

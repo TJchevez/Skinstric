@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import '../App.css';
-import Nav from "../Components.jsx/Nav";
+import { Link } from "react-router-dom";
 
-const Form = () => {
+const Hometown = () => {
   const [name, setName] = useState('');
   const [location, setLocation] = useState('');
   const [error, setError] = useState('');
@@ -45,9 +45,9 @@ const Form = () => {
 
   return (
     <>
-    <Nav />
+    <NavForForms />
     <div className="form-container">
-      <h2>Tell us about yourself</h2>
+    <p>CLICK TO TYPE</p>
       <input
         type="text"
         placeholder="Your name"
@@ -70,4 +70,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default Hometown;
