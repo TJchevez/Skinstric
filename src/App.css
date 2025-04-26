@@ -196,15 +196,24 @@ font-weight: 400;
 color: #9ca3af;
 }
 
-
-/* BUTTONS */
-
+/* Button Style For Forms */
 .buttonGroup {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 1000px;
 }
+
+/* Button Style for the rest of the pages with less margin-top */
+.buttonGroup_General--lessMargin {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+/* BUTTONS */
+
 
 .button-wrapper-left,
 .button-wrapper-right {
@@ -280,6 +289,10 @@ color: #9ca3af;
   margin: 0px 10px;
 }
 
+.error {
+  color: red;
+}
+
 /* DIAMOND TRIO */
 .diamond-stack-wrapper {
   position: absolute;
@@ -333,7 +346,84 @@ color: #9ca3af;
   opacity: 1;
 }
 
+/* SUBMITTION - THANK YOU PAGE */
 
-.error {
-  color: red;
+.submittion_container-style {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.thankYou__submittion-font {
+  color: #0a0a0a;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.processNextStep__submittion-font {
+  font-size: 16px;
+margin-top: 4px;
+}
+
+/* ALERT - For Submittion Page */
+.success-alert {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #e5e6e6;
+  color: #000000;
+  padding: 12px 20px;
+  border: 1px solid #303030;
+  border-radius: 8px;
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.38);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  z-index: 1000;
+
+  animation: fadeInUp 0.5s ease forwards; 
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); 
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-out {
+  animation: fadeOutRight 0.5s ease forwards;
+}
+
+@keyframes fadeOutRight {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(50px); 
+  }
+}
+
+.success-title {
+  font-weight: 700;
+}
+
+.success-message {
+  font-weight: 500;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }

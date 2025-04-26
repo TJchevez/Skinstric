@@ -1,71 +1,47 @@
 import React, { useState } from 'react';
 import '../App.css';
-import { Link } from "react-router-dom";
+import NavForForms from '../Components.jsx/NavForForms';
+import DiamondTrio from '../Components.jsx/DiamondTrio';
+import { useNavigate } from 'react-router-dom';
+import FormNavigationButtons from '../Components.jsx/FormNavigationButtons'; 
 
 const Hometown = () => {
-  const [name, setName] = useState('');
-  const [location, setLocation] = useState('');
+  const [hometown, setHometown] = useState('');
   const [error, setError] = useState('');
+  const navigate = useNavigate();
 
-  const validateInput = () => {
-    const nameValid = /^[A-Za-z\s]+$/.test(name);
-    const locationValid = /^[A-Za-z\s]+$/.test(location);
-    return nameValid && locationValid;
-  };
+  const validateInput = () => /^[A-Za-z\s]+$/.test(hometown);
 
-  const handleSubmit = async () => {
+  const handleSubmit = () => {
     if (!validateInput()) {
-      setError('Please enter valid name and location (letters only).');
+      setError('Please enter valid hometown (letters only).');
       return;
     }
 
-    try {
-      const response = await fetch(
-        'https://us-central1-api-skinstric-ai.cloudfunctions.net/skinstricPhaseOne',
-        {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ name, location })
-        }
-      );
-
-      const data = await response.json();
-      console.log(data);
-
-      
-      localStorage.setItem('skintrics_user', JSON.stringify({ name, location }));
-
-     
-      alert('Success! Proceeding to next step...');
-
-    } catch (error) {
-      setError('Submission failed. Try again.');
-    }
+    localStorage.setItem('hometown', hometown);
+    navigate('/submittion'); 
   };
 
   return (
     <>
-    <NavForForms />
-    <div className="form-container">
-    <p>CLICK TO TYPE</p>
-      <input
-        type="text"
-        placeholder="Your name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
-      <input
-        type="text"
-        placeholder="Your location"
-        value={location}
-        onChange={(e) => setLocation(e.target.value)}
-      />
-      {error && <p className="error">{error}</p>}
-      <div className="button-group">
-        <button onClick={() => window.history.back()}>Back</button>
-        <button onClick={handleSubmit}>Proceed</button>
+      <NavForForms />
+      <div className="form-container hover-target">
+        <DiamondTrio />
+        <p className="clickToType-font">CLICK TO TYPE</p>
+        <input
+          type="text"
+          placeholder="Where do you live?"
+          value={hometown}
+          onChange={(e) => setHometown(e.target.value)}
+          onKeyDown={(e) => e.key === 'Enter' && handleSubmit()}
+        />
+        {error && <p className="error">{error}</p>}
       </div>
-    </div>
+
+      <FormNavigationButtons
+        onBack={() => window.history.back()}
+        onProceed={handleSubmit}
+      />
     </>
   );
 };
