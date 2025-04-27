@@ -10,7 +10,7 @@ const Location = () => {
   const [error, setError] = useState('');
 
   const validateInput = () => {
-    const locationValid = /^[A-Za-z\s]+$/.test(location);
+    const locationValid = /^[A-Za-z,\s]+$/.test(location);
     return locationValid;
   };
 

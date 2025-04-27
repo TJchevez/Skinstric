@@ -10,7 +10,7 @@ const Hometown = () => {
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  const validateInput = () => /^[A-Za-z\s]+$/.test(hometown);
+  const validateInput = () => /^[A-Za-z,\s]+$/.test(hometown);
 
   const handleSubmit = () => {
     if (!validateInput()) {
