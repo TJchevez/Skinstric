@@ -1,38 +1,466 @@
-.App {
+@font-face {
+  font-family: 'Roobert TRIAL';
+}
+
+body {
+  font-family: 'Roobert TRIAL', sans-serif; 
+  padding: 40px 60px;
+}
+
+/* NAV */
+.header__nav-home {
+max-width: 1920px;
+max-height: 64px;
+}
+
+.header__nav--rowStyle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+}
+
+.header__nav-style {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__nav-skintric {
+  color: #0a0a0a;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.header__nav-intro {
+  color: #737373;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.header__nav-button {
+  color: #fafafa;
+  font-size: 14px;
+  background-color: #171717;
+  padding: 8px 16px;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* NAV for FORMS */
+.header__navForm-analysisCopy {
+font-size: 16px;
+font-weight: 600;
+}
+
+/* Center Home Page */
+
+.sophisticatedSkincare__header-home {
+  font-weight: 300;
+  font-size: 128px;
+  margin-top: 200px;
+  display: flex;
+  flex-direction: column;
+  will-change: transform;
+  position: relative;
+  z-index: 2;
+  will-change: transform;
+  text-align: center;
+  align-items: center;
+}
+
+.align-left {
+  text-align: left;
+  align-items: flex-start;
+}
+
+.align-right {
+  text-align: right;
+  align-items: flex-end;
+}
+
+.align-center {
+  text-align: center;
+  align-items: center;
+}
+
+.sophisticatedSkincare__header-font1 {
+  font-weight: 300;
+  font-size: 100px;
+}
+
+.sophisticatedSkincare__header-font2 {
+  font-weight: 300;
+  font-size: 100px;
+}
+
+/* Buttons and Design - Home Page */
+
+.header-line-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 200px;
+}
+
+.diamond-left {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  top: 116px;
+  border: 2px dashed #a0a4ab;
+  transform: rotate(45deg);
+  left: -400px;
+  z-index: 1;
+}
+
+.diamond-right {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  top: 116px;
+  border: 2px dashed #a0a4ab;
+  transform: rotate(45deg);
+  right: -400px;
+  z-index: 1;
+}
+
+.discover__button-left {
+  position: absolute;
+  width: 150px;
+  height: 44px;
+  margin-top: 300px;
+  left: 0px;
+  z-index: 1;
+}
+
+.takeTest__button-right {
+  position: absolute;
+  width: 140px;
+  height: 44px;
+  margin-top: 130px;
+  right: 0px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.diamond-left,
+.diamond-right,
+.discover__button-left,
+.takeTest__button-right {
+  transition: opacity 0.3s ease;
+  opacity: 1;
+}
+
+/* Paragraph Home Page */
+.skinstric__home-paragraph {
+  width: 316px;
+  height: 72px;
+  padding-top: 500px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  
+}
+
+
+/* Form Page */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 320px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  top: 360px;
+}
+
+input {
+  font-size: 30px;
+  font-weight: 600;
+  text-align: center;
+  padding-top: 4px 0px;
+  border: none;
+  border-bottom: 1px solid #141516;
+  outline: 0;
+}
+
+.clickToType-font {
+font-size: 14px;
+font-weight: 400;
+color: #9ca3af;
+}
+
+/* Button Style For Forms */
+.buttonGroup {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1000px;
+}
+
+/* Button Style for the rest of the pages with less margin-top */
+.buttonGroup_General--lessMargin {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+/* BUTTONS */
+
+
+.button-wrapper-left,
+.button-wrapper-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.button-wrapper-left {
+  flex-direction: row;
+}
+
+.button-wrapper-right {
+  flex-direction: row;
+}
+
+
+.diamond-button {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  transform: rotate(45deg);
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 1px #000000; 
+}
+
+.inner-diamond {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: 1px dashed #9ca3af;
+  transform: rotate(-90deg);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.diamond-button:hover .inner-diamond {
+  opacity: 1;
+}
+
+
+.mini-triangle-left,
+.mini-triangle-right {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.mini-triangle-left {
+  border-top: 8px solid transparent;
+  border-right: 10px solid black;
+  border-bottom: 8px solid transparent;
+  transform: rotate(-45deg);
+}
+
+.mini-triangle-right {
+  border-top: 8px solid transparent;
+  border-left: 10px solid black;
+  border-bottom: 8px solid transparent;
+  transform: rotate(-45deg); 
+}
+
+.button__copy {
+  font-weight: 700;
+  font-size: 12px;
+  z-index: 2;
+  user-select: none;
+  margin: 0px 10px;
+}
+
+.error {
+  color: red;
+}
+
+/* DIAMOND TRIO */
+.diamond-stack-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.diamond {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  border: 2px dashed;
+}
+
+.diamond-small {
+  width: 400px;
+  height: 400px;
+  border-color: #4b5563; 
+  z-index: 3;
+}
+
+.diamond-medium {
+  width: 500px;
+  height: 500px;
+  border-color: #9ca3af; 
+  z-index: 2;
+}
+
+.diamond-large {
+  width: 600px;
+  height: 600px;
+  border-color: #e5e7eb; 
+  z-index: 1;
+}
+
+.half-right {
+  clip-path: inset(0 0 0 50%);
+}
+
+.hover-target {
+  position: relative;
+}
+
+.hover-target:hover .diamond-stack-wrapper {
+  opacity: 1;
+}
+
+/* SUBMITTION - THANK YOU PAGE */
+
+.submittion_container-style {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.thankYou__submittion-font {
+  color: #0a0a0a;
+  font-size: 30px;
+  font-weight: 600;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.processNextStep__submittion-font {
+  font-size: 16px;
+margin-top: 4px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* ALERT - For Submittion Page */
+.success-alert {
+  position: fixed;
+  width: 320px;
+  height: 60px;
+  text-align: center;
+  top: 20px;
+  right: 20px;
+  background-color: transparent;
+  color: #000000;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.38);
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  z-index: 1000;
+
+  animation: fadeInUp 0.5s ease forwards; 
 }
 
-.App-link {
-  color: #61dafb;
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); 
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.fade-out {
+  animation: fadeOutRight 0.5s ease forwards;
+}
+
+@keyframes fadeOutRight {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    opacity: 0;
+    transform: translateX(50px); 
   }
+}
+
+.success-title {
+  font-weight: 700;
+}
+
+.success-message {
+  font-weight: 500;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* DIMENSIONS FOR HOME PAGE */
+
+.home_dimension--section {
+  display: none;
+}
+
+@media (max-width: 1025px) {
+  .dimension-wrap {
+    display: none;
+  }
+
+  .home_dimension--section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .sophisticatedSkincare__header-font1 {
+    font-size: 60px;
+  }
+  .sophisticatedSkincare__header-font2 {
+    font-size: 60px;
+  }
+
+  .skinstric__home-paragraph {
+    font-size: 16px;
+    padding-top: 0px;
+    font-weight: 600;
+    color: #737373b7;
+  }
+  .takeTest__button-right {
+   margin: 0px 28% 0px 0px;
+  }
+  
 }
