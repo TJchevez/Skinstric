@@ -5,6 +5,8 @@ import Introduction from './Pages.jsx/Introduction';
 import Location from './Pages.jsx/Location';
 import Hometown from './Pages.jsx/Hometown';
 import Submittion from './Pages.jsx/Submittion';
+import Result from './Pages.jsx/Result';
+import Loading from './Pages.jsx/Loading';
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
           <Route path="/Location" element={<Location />} />
           <Route path="/Hometown" element={<Hometown />} />
           <Route path="/Submittion" element={<Submittion />} />
+          <Route path="/Result" element={<Result />} />
+          <Route path="/Loading" element={<Loading />} />
         </Routes>
       </BrowserRouter>
   );

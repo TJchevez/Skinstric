@@ -464,3 +464,61 @@ margin-top: 4px;
   }
   
 }
+
+/* RESULT PAGE */
+.result-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.result__image-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex: 1;
+}
+
+.result__cameraPhoto-left{
+  font-size: 48px;
+  cursor: pointer;
+} 
+
+.result__imageUpload-right {
+  font-size: 48px;
+  cursor: pointer;
+}
+
+.button-bottom-wrapper {
+  margin-top: auto;
+  padding-bottom: 40px;
+}
+
+.upload-label {
+  cursor: pointer;
+}
+
+.image-preview {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  text-align: right;
+  z-index: 5;
+}
+
+.preview-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0a0a0a;
+  margin-bottom: 4px;
+  text-align: left;
+}
+
+.preview-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  box-shadow: #000000;
+}
+
+

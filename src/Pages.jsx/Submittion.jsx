@@ -36,7 +36,7 @@ function Submittion() {
 
       <GeneralButtons
         onBack={() => window.history.back()}
-        onProceed={() => (window.location.href = "/")} // GOES TO HOME FOR NOW - PHASE TWO IS NEXT TO BUILD
+        onProceed={() => (window.location.href = "/Result")} 
         backText="BACK"
         proceedText="PROCESS"
       />
