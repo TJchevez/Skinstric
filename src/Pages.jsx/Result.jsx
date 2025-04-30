@@ -3,6 +3,8 @@ import NavForForms from '../Components.jsx/NavForForms';
 import GeneralButtons from '../Components.jsx/GeneralButtons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCamera, faImage } from '@fortawesome/free-solid-svg-icons';
+import SpinningSquares from '../Components.jsx/SpinningSquares';
+
 
 function Result() {
   const [imageBase64, setImageBase64] = useState(null);
@@ -68,24 +70,27 @@ function Result() {
           </div>
         )}
 
-        <div className="result__image-container">
-          <div className="result__cameraPhoto-left">
-            <FontAwesomeIcon icon={faCamera} />
-          </div>
-
-          <div className="result__imageUpload-right">
-            <label htmlFor="image-upload" className="upload-label">
-              <FontAwesomeIcon icon={faImage} />
-            </label>
-            <input
-              type="file"
-              id="image-upload"
-              accept="image/*"
-              onChange={handleImageUpload}
-              style={{ display: 'none' }}
-            />
-          </div>
-        </div>
+<div className="result__image-container">
+  <div className="result__cameraPhoto-left icon-wrapper">
+    <SpinningSquares size={240} color="#0a0a0a" />
+    <FontAwesomeIcon icon={faCamera} />
+    <p className='result__font'>ALLOW A.I TO SCAN YOUR FACE</p>
+  </div>
+  <div className="result__imageUpload-right icon-wrapper">
+    <SpinningSquares size={240} color="#0a0a0a" />
+    <p className='result__font'>ALLOW A.I TO SCAN YOUR FACE</p>
+    <label htmlFor="image-upload" className="upload-label">
+      <FontAwesomeIcon icon={faImage} />
+    </label>
+    <input
+      type="file"
+      id="image-upload"
+      accept="image/*"
+      onChange={handleImageUpload}
+      style={{ display: 'none' }}
+    />
+  </div>
+</div>
 
         {error && <p className="error">{error}</p>}
 
