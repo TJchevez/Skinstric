@@ -6,7 +6,8 @@ import Location from './Pages.jsx/Location';
 import Hometown from './Pages.jsx/Hometown';
 import Submittion from './Pages.jsx/Submittion';
 import Result from './Pages.jsx/Result';
-import Loading from './Pages.jsx/Loading';
+import Demographics from './Components.jsx/Demographics';
+import AnalysisOptions from './Pages.jsx/AnalysisOptions';
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
           <Route path="/Hometown" element={<Hometown />} />
           <Route path="/Submittion" element={<Submittion />} />
           <Route path="/Result" element={<Result />} />
-          <Route path="/Loading" element={<Loading />} />
+          <Route path="/AnalysisOptions" element={<AnalysisOptions />} />
+          <Route path="/Demographics" element={<Demographics />} />
         </Routes>
       </BrowserRouter>
   );

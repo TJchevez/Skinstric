@@ -479,6 +479,13 @@ margin-top: 4px;
   flex: 1;
 }
 
+.result__cameraPhoto-left,
+.result__imageUpload-right {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 80px;
+}
+
 .result__cameraPhoto-left{
   font-size: 48px;
   cursor: pointer;
@@ -502,16 +509,15 @@ margin-top: 4px;
   position: absolute;
   top: 20px;
   right: 40px;
-  text-align: right;
   z-index: 5;
 }
 
 .preview-label {
-  font-size: 14px;
   font-weight: 700;
   color: #0a0a0a;
   margin-bottom: 4px;
   text-align: left;
+  font-size: 12px;
 }
 
 .preview-img {
@@ -521,19 +527,97 @@ margin-top: 4px;
   box-shadow: #000000;
 }
 
-.result__font {
-  font-size: 7px;
-  font-weight: 600;
+.result__font-left {
+  font-size: 14px; 
+  font-weight: 500;
+  max-width: 160px;
+  text-align: left;
+  margin-bottom: 180px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.result__font-right {
+  font-size: 14px; 
+  font-weight: 500;
+  max-width: 160px;
+  text-align: right;
+  margin-top: 180px;
+}
+
+.line-to-icon {
+  width: 160px;
+  height: 2px;
+  background-color: black;
+  position: absolute;
+  top: 100px;
+  right: 148px; 
+  transform: rotate(-20deg); /* diagonal angle */
+  transform-origin: left center;
+}
+
+.line-to-icon::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  right: 160px;
+  top: 30%;
+  transform: translateY(-50%);
+}
+.line-to-icon-right {
+  width: 160px;
+  height: 2px;
+  background-color: black;
+  position: absolute;
+  bottom: 34px;
+  right: 148px; 
+  transform: rotate(-24deg); /* diagonal angle */
+  transform-origin: left center;
+}
+
+.line-to-icon-right::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  right: 0px;
+  top: 30%;
+  transform: translateY(-50%);
+}
+
+
+
+.icon-stack {
+  position: relative;
+  width: 240px; 
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* RESPONSIVE DIMENSIONS FOR RESULTS PAGE */
+@media (max-width: 1025px) {
+  .result__image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 /* SPINNING SQUARES COMPONENT */
 .icon-wrapper {
-  position: relative;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  width: 100px;
-  height: 100px;
+  position: relative;
 }
 
 .spinning-square-container {
@@ -550,4 +634,105 @@ margin-top: 4px;
   background: transparent;
 }
 
+/* LOADING OVERLAY */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(184, 179, 179, 0);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(6px);
+}
+
+.loading-spinner {
+  text-align: center;
+  color: rgb(0, 0, 0);
+  font-size: 1.5rem;
+}
+
+/* ANALYSIS OPTIONS PAGE  */
+.diamond-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 400px auto;
+  text-decoration: none;
+  color: inherit;
+}
+
+.diamond-container a:visited {
+  color: inherit;
+}
+
+.diamondAnalytics {
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  background-color: #f0f0f0;
+  transform: rotate(45deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 2%;
+  cursor: pointer;
+}
+
+.diamond-north {
+  top: -10px;
+  left: 90px;
+}
+
+.diamond-north:hover {
+  background-color: #9ca3af44;
+}
+
+.diamond-east {
+  top: 90px;
+  left: 190px;
+}
+.diamond-east:hover {
+  background-color: #9ca3af44;
+}
+
+.diamond-south {
+  top: 190px;
+  left: 90px;
+}
+
+.diamond-south:hover {
+  background-color: #9ca3af44;
+}
+
+.diamond-west {
+  top: 90px;
+  left: -10px;
+}
+
+.diamond-west:hover {
+  background-color: #9ca3af44;
+}
+
+.diamond-text {
+  transform: rotate(-45deg);
+  width: 100%; 
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.analytic_bottom-buttons {
+  margin-top: 420px;
+}
+
+.analysis_font-paragraph {
+  color: #737373;
+  font-size: 12px;
+}
 
