@@ -554,7 +554,7 @@ input {
   position: absolute;
   top: 100px;
   right: 148px;
-  transform: rotate(-20deg); /* diagonal angle */
+  transform: rotate(-20deg); 
   transform-origin: left center;
 }
 
@@ -576,7 +576,7 @@ input {
   position: absolute;
   bottom: 34px;
   right: 148px;
-  transform: rotate(-24deg); /* diagonal angle */
+  transform: rotate(-24deg); 
   transform-origin: left center;
 }
 
@@ -600,6 +600,102 @@ input {
   align-items: center;
   justify-content: center;
 }
+
+.camera-permission-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(250, 250, 250, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  z-index: 1000;
+}
+
+.camera-permission-modal {
+  background: white;
+  border: 2px solid black;
+  padding: 24px 32px;
+  border-radius: 12px;
+  margin-left: 100px;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.permission-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.permission-buttons button {
+  padding: 10px 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.allow-button {
+  background-color: #000;
+  color: #fff;
+}
+
+.deny-button {
+  background-color: #ccc;
+  color: #000;
+}
+
+.result-page-wrapper.dimmed {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fullscreen-camera {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.camera-video-full {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.capture-button-full {
+  position: absolute;
+  right: 32px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 16px 24px;
+  font-size: 18px;
+  background: white;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  z-index: 10000;
+  cursor: pointer;
+  box-shadow: 0 0 12px rgba(0,0,0,0.5);
+}
+
+
+
 
 /* RESPONSIVE DIMENSIONS FOR RESULTS PAGE */
 @media (max-width: 1025px) {
@@ -1035,3 +1131,5 @@ input {
   text-align: right;
   font-size: 14px;
 }
+
+
