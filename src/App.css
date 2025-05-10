@@ -304,7 +304,7 @@ input {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) rotate(45deg);
-  border: 2px dashed;
+  border: 3px dotted;
 }
 
 .diamond-small {
@@ -548,46 +548,48 @@ input {
 }
 
 .line-to-icon {
-  width: 160px;
+  width: 200px;
   height: 2px;
   background-color: black;
   position: absolute;
-  top: 100px;
-  right: 148px;
-  transform: rotate(-20deg);
+  top: 120px;
+  right: 142px;
+  transform: rotate(-24deg);
   transform-origin: left center;
 }
 
 .line-to-icon::after {
   content: "";
-  width: 8px;
-  height: 8px;
-  background-color: black;
+  width: 4px;
+  height: 4px;
+  background-color: white;
+  border-style: solid;
   border-radius: 50%;
   position: absolute;
-  right: 160px;
+  right: 0px;
   top: 30%;
   transform: translateY(-50%);
 }
 .line-to-icon-right {
-  width: 160px;
+  width: 176px;
   height: 2px;
   background-color: black;
   position: absolute;
   bottom: 34px;
-  right: 148px;
-  transform: rotate(-24deg);
+  right: 130px;
+  transform: rotate(-20deg);
   transform-origin: left center;
 }
 
 .line-to-icon-right::after {
   content: "";
-  width: 8px;
-  height: 8px;
-  background-color: black;
+  width: 4px;
+  height: 4px;
+   background-color: white;
+  border-style: solid;
   border-radius: 50%;
   position: absolute;
-  right: 0px;
+  right: 172px;
   top: 30%;
   transform: translateY(-50%);
 }
@@ -609,7 +611,6 @@ input {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(250, 250, 250, 0.6);
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -658,11 +659,6 @@ input {
   color: rgba(255, 255, 255, 0.664);
 }
 
-.result-page-wrapper.dimmed {
-  opacity: 0.3;
-  pointer-events: none;
-}
-
 .camera-bottom-instructions {
   position: absolute;
   bottom: 32px;
@@ -704,6 +700,7 @@ input {
     transform: translateY(0);
   }
 }
+
 
 .fullscreen-camera {
   position: fixed;
@@ -763,7 +760,7 @@ input {
   transform: translateY(-50%);
   transform: scale(.75);
   padding: 6px 6px;
-  font-size: 18px;
+  font-size: 32px;
   background: white;
   color: black;
   border: none;
@@ -922,7 +919,6 @@ display: none;
 
 .capture-button-full {
   top: 160px;
-  right: 200px;
 }
 
 .button-label {
@@ -975,6 +971,12 @@ display: none;
     opacity: 1;
     transform: translate(-50%, 0);
   }
+}
+
+.dim-wrapper.dimmed {
+  opacity: 0.3;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
 }
 
 /* RESPONSIVE DIMENSIONS FOR RESULTS PAGE */

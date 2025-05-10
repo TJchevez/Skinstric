@@ -35,28 +35,27 @@ function Result() {
     setShowPermissionPrompt(true);
   };
 
- const capturePhoto = () => {
-  if (!videoRef.current || !canvasRef.current) return;
+  const capturePhoto = () => {
+    if (!videoRef.current || !canvasRef.current) return;
 
-  const context = canvasRef.current.getContext("2d");
-  const video = videoRef.current;
-  canvasRef.current.width = video.videoWidth;
-  canvasRef.current.height = video.videoHeight;
-  context.drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
+    const context = canvasRef.current.getContext("2d");
+    const video = videoRef.current;
+    canvasRef.current.width = video.videoWidth;
+    canvasRef.current.height = video.videoHeight;
+    context.drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
 
-  const base64 = canvasRef.current.toDataURL("image/jpeg").split(",")[1];
-  setImageBase64(base64);
-  setPhotoCaptured(true);
+    const base64 = canvasRef.current.toDataURL("image/jpeg").split(",")[1];
+    setImageBase64(base64);
+    setPhotoCaptured(true);
 
-  const stream = video.srcObject;
-  if (stream) {
-    stream.getTracks().forEach((track) => track.stop());
-  }
+    const stream = video.srcObject;
+    if (stream) {
+      stream.getTracks().forEach((track) => track.stop());
+    }
 
-  setTimeout(() => {
-    handleProceed();
-  }, 100); 
-};
+    setShowCamera(false);
+  };
+
   const handleProceed = async () => {
     if (!imageBase64) {
       setError("Please upload or take a photo before proceeding.");
@@ -96,11 +95,7 @@ function Result() {
   return (
     <>
       <NavForForms />
-      <div
-        className={`result-page-wrapper ${
-          showPermissionPrompt ? "dimmed" : ""
-        }`}
-      >
+      <div className="result-page-wrapper">
         {imageBase64 && (
           <div className="image-preview">
             <h1 className="preview-label">Preview</h1>
@@ -121,29 +116,33 @@ function Result() {
             </p>
             <div className="line-to-icon" />
             <div className="icon-stack">
-              <SpinningSquares size={260} color="#0a0a0a" />
+              <SpinningSquares size={260} color="#0a0a0a"/>
               <CircleIcon icon={faCamera} />
             </div>
           </div>
 
-          <div className="result__imageUpload-right icon-wrapper">
-            <div className="icon-stack">
-              <SpinningSquares size={260} color="#0a0a0a" />
-              <label htmlFor="image-upload" className="upload-label">
-                <CircleIcon icon={faImage} />
-              </label>
-              <input
-                type="file"
-                id="image-upload"
-                accept="image/*"
-                onChange={handleImageUpload}
-                style={{ display: "none" }}
-              />
+          <div
+            className={`dim-wrapper ${showPermissionPrompt ? "dimmed" : ""}`}
+          >
+            <div className="result__imageUpload-right icon-wrapper">
+              <div className="icon-stack">
+                <SpinningSquares size={260} color="#0a0a0a" />
+                <label htmlFor="image-upload" className="upload-label">
+                  <CircleIcon icon={faImage} />
+                </label>
+                <input
+                  type="file"
+                  id="image-upload"
+                  accept="image/*"
+                  onChange={handleImageUpload}
+                  style={{ display: "none" }}
+                />
+              </div>
+              <p className="result__font-right">
+                ALLOW A.I <br /> ACCESS GALLERY
+              </p>
+              <div className="line-to-icon-right" />
             </div>
-            <p className="result__font-right">
-              ALLOW A.I <br /> ACCESS GALLERY
-            </p>
-            <div className="line-to-icon-right" />
           </div>
         </div>
         {error && <p className="error">{error}</p>}
@@ -172,7 +171,7 @@ function Result() {
             <div className="camera-bottom-buttons">
               <div
                 className="camera-button-left"
-                onClick={() => window.history.back()}
+                onClick={() => window.location.reload()}
               >
                 <div className="result_diamond-button">
                   <div className="result_inner-diamond" />
@@ -185,7 +184,7 @@ function Result() {
               <div className="camera-bottom-buttons">
                 <div
                   className="camera-button-left"
-                  onClick={() => window.history.back()}
+                  onClick={() => window.location.reload()}
                 >
                   <div className="result_diamond-button">
                     <div className="result_inner-diamond" />
@@ -295,10 +294,7 @@ function Result() {
 
             <div className="spinner-with-icon">
               <SpinningSquares size={400} color="#0a0a0a" />
-              <CircleIcon
-                icon={faCamera}
-                className="spinner-camera-icon"
-              />
+              <CircleIcon icon={faCamera} className="spinner-camera-icon" />
             </div>
             <div className="camera-loading-instructions">
               <span className="camera_loading-text">

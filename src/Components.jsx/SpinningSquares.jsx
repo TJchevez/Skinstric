@@ -1,38 +1,44 @@
-import React, { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import '../App.css';
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
+import "../App.css";
 
-const SpinningSquares = ({ size = 80, color = '#ccc', count = 3 }) => {
+const SpinningSquares = ({ count = 3 }) => {
   const containerRef = useRef(null);
 
   useEffect(() => {
-    const squares = containerRef.current.querySelectorAll('.square');
+    const squares = containerRef.current.querySelectorAll(".square");
 
     squares.forEach((square, index) => {
       gsap.to(square, {
-        rotation: '+=360',
+        rotation: "+=360",
         duration: 5 + index * 1.5,
         repeat: -1,
-        ease: 'linear',
-        transformOrigin: 'center center',
+        ease: "linear",
+        transformOrigin: "center center",
       });
     });
   }, []);
 
+  const squareConfigs = [
+    { size: 340, color: "#2a2a2a", borderWidth: "2px" },
+    { size: 360, color: "#6c6c6c", borderWidth: "2px" },
+    { size: 400, color: "#cccccc", borderWidth: "2px" },
+  ];
+
   return (
     <div className="spinning-square-container" ref={containerRef}>
-      {Array.from({ length: count }).map((_, idx) => (
+      {squareConfigs.slice(0, count).map((config, idx) => (
         <div
-        key={idx}
-        className="square"
-        style={{
-          width: `${size + idx * 20}px`,
-          height: `${size + idx * 20}px`,
-          border: `1.25px dotted ${color}`,
-          position: 'absolute',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%) rotate(45deg)', 
+          key={idx}
+          className="square"
+          style={{
+            width: `${config.size}px`,
+            height: `${config.size}px`,
+            border: `${config.borderWidth} dotted ${config.color}`,
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%) rotate(45deg)",
           }}
         />
       ))}
@@ -41,4 +47,3 @@ const SpinningSquares = ({ size = 80, color = '#ccc', count = 3 }) => {
 };
 
 export default SpinningSquares;
-
