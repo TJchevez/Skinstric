@@ -431,39 +431,6 @@ input {
   }
 }
 
-/* DIMENSIONS FOR HOME PAGE */
-
-.home_dimension--section {
-  display: none;
-}
-
-@media (max-width: 1025px) {
-  .dimension-wrap {
-    display: none;
-  }
-
-  .home_dimension--section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .sophisticatedSkincare__header-font1 {
-    font-size: 60px;
-  }
-  .sophisticatedSkincare__header-font2 {
-    font-size: 60px;
-  }
-
-  .skinstric__home-paragraph {
-    font-size: 16px;
-    padding-top: 0px;
-    font-weight: 600;
-    color: #737373b7;
-  }
-  .takeTest__button-right {
-    margin: 0px 28% 0px 0px;
-  }
-}
 
 /* RESULT PAGE */
 .result-page-wrapper {
@@ -884,49 +851,6 @@ input {
   font-weight: 500;
 }
 
-/* RESPONSIVE CAMERA CAPTURE FUNCTION  */
-@media (max-width: 1025px) {
-  .camera-great-shot {
-    position: absolute;
-    top: 180px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: white;
-    font-size: 18px;
-    font-weight: 500;
-    z-index: 10001;
-    text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
-}
-
-.camera_bottom-item {
-  font-size: 10px;
-}
-
-.camera_bottom-row span {
-    font-size: 10px;
-    margin-bottom: 36px;
-    padding: 0px 10px;
-}
-
-.camera_bottom-text {
-  font-size: 12px;
-  margin-bottom: 10px;
-}
-
-.camera-capture-text {
-display: none;
-}
-
-.capture-button-full {
-  top: 160px;
-}
-
-.button-label {
-  display: none;
-}
-
-}
-
 /* CAMERA NAV COMPONENT */
 .camera-nav {
   position: absolute;
@@ -977,32 +901,6 @@ display: none;
   opacity: 0.3;
   pointer-events: none;
   transition: opacity 0.3s ease;
-}
-
-/* RESPONSIVE DIMENSIONS FOR RESULTS PAGE */
-@media (max-width: 1025px) {
-  .result__image-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .line-to-icon-right {
-    display: none;
-  }
-
-    .line-to-icon {
-      display: none;
-    }
-  
-    .buttonGroup_General--lessMargin {
-      margin-top: 80px;
-    }
-  
-    .camera-permission-modal {
-      margin-left: 60px;
-      margin-top: 0px;
-    }
 }
 
 /* CIRCLE ICON COMPONENT */
@@ -1355,21 +1253,6 @@ display: none;
   pointer-events: none;
 }
 
-/* RESPONSIVE DIMENSIONS FOR DEMOGRAPHICS PAGE */
-@media (max-width: 1350px) {
-  .demographics__wrapper-columns {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .demographics__middle-content {
-    width: 64%;
-  }
-  .demographics__category-label {
-    left: 500px;
-  }
-}
-
 /* DONUT CHART COMPONENT */
 .donut-chart {
   width: 400px;
@@ -1499,4 +1382,122 @@ display: none;
   width: 80%;
   text-align: right;
   font-size: 14px;
+}
+
+/* RESPONSIVE DIMENSIONS FOR HOME PAGE */
+
+.home_dimension--section {
+  display: none;
+}
+
+@media (max-width: 1025px) {
+  .dimension-wrap {
+    display: none;
+  }
+
+  .home_dimension--section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .sophisticatedSkincare__header-font1 {
+    font-size: 60px;
+  }
+  .sophisticatedSkincare__header-font2 {
+    font-size: 60px;
+  }
+
+  .skinstric__home-paragraph {
+    font-size: 16px;
+    padding-top: 0px;
+    font-weight: 600;
+    color: #737373b7;
+  }
+  .takeTest__button-right {
+    margin: 0px 28% 0px 0px;
+  }
+}
+
+/* RESPONSIVE DIMENSIONS FOR RESULTS PAGE */
+@media (max-width: 1025px) {
+  .result__image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .line-to-icon-right {
+    display: none;
+  }
+
+    .line-to-icon {
+      display: none;
+    }
+  
+    .buttonGroup_General--lessMargin {
+      margin-top: 80px;
+    }
+  
+    .camera-permission-modal {
+      margin-left: 60px;
+      margin-top: 0px;
+    }
+}
+
+/* RESPONSIVE DIMENSIONS FOR DEMOGRAPHICS PAGE */
+@media (max-width: 1350px) {
+  .demographics__wrapper-columns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .demographics__middle-content {
+    width: 64%;
+  }
+  .demographics__category-label {
+    left: 500px;
+  }
+}
+
+/* RESPONSIVE CAMERA CAPTURE FUNCTION  */
+@media (max-width: 1025px) {
+  .camera-great-shot {
+    position: absolute;
+    top: 180px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    z-index: 10001;
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+.camera_bottom-item {
+  font-size: 10px;
+}
+
+.camera_bottom-row span {
+    font-size: 10px;
+    margin-bottom: 36px;
+    padding: 0px 10px;
+}
+
+.camera_bottom-text {
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.camera-capture-text {
+display: none;
+}
+
+.capture-button-full {
+  top: 160px;
+}
+
+.button-label {
+  display: none;
+}
+
 }
