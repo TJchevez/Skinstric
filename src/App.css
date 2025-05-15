@@ -4,7 +4,7 @@
 
 body {
   font-family: "Roobert TRIAL", sans-serif;
-  padding: 40px 60px;
+  padding: 20px;
 }
 
 /* NAV */
@@ -198,7 +198,7 @@ input {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 1000px;
+  margin-top: 800px;
 }
 
 /* Button Style for the rest of the pages with less margin-top */
@@ -430,7 +430,6 @@ input {
     transform: translateY(0);
   }
 }
-
 
 /* RESULT PAGE */
 .result-page-wrapper {
@@ -1384,7 +1383,7 @@ input {
   font-size: 14px;
 }
 
-/* RESPONSIVE DIMENSIONS FOR HOME PAGE */
+/* DIMENSIONS FOR HOME PAGE */
 
 .home_dimension--section {
   display: none;
@@ -1415,6 +1414,29 @@ input {
   }
   .takeTest__button-right {
     margin: 0px 28% 0px 0px;
+  }
+}
+
+@media (max-width: 768px) { 
+ .home_dimension--section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .header__nav--rowStyle {
+    display: block;
+  }
+  @media (max-width: 375px) {
+    .home_dimension--section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(80%);
+  }
+
+  .header__nav-button {
+    transform: scale(80%);
+  }
   }
 }
 
