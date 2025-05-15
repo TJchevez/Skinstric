@@ -3,8 +3,10 @@
 }
 
 body {
-  font-family: "Roobert TRIAL", sans-serif;
   padding: 20px;
+  margin: 0 auto;
+  display: block;
+  font-family: "Roobert TRIAL", sans-serif;
 }
 
 /* NAV */
@@ -1440,6 +1442,22 @@ input {
   }
 }
 
+/* RESPONSIVE DIMENSIONS FOR INTRODUCTION PAGE */
+ @media (max-width: 375px) {
+.buttonGroup {
+  margin-top: 600px;
+}
+.button__copy {
+  display: none;
+}
+.form-container {
+  transform: scale(80%);
+}
+.icon-wrapper {
+ transform: scale(60%);
+}
+ }
+
 /* RESPONSIVE DIMENSIONS FOR RESULTS PAGE */
 @media (max-width: 1025px) {
   .result__image-container {
@@ -1501,7 +1519,6 @@ input {
 
 .camera_bottom-row span {
     font-size: 10px;
-    margin-bottom: 36px;
     padding: 0px 10px;
 }
 
@@ -1520,6 +1537,36 @@ display: none;
 
 .button-label {
   display: none;
+}
+
+@media (max-width: 375px) {
+.camera-bottom-instructions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.capture-button-full {
+  top: 0px;
+}
+.camera_bottom-row {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: scale(80%);
+}
+.camera-video-full {
+  object-fit: cover;
+  height: 100%;
+}
+
+.diamond-container {
+  margin: 100px auto;
+  transform: scale(80%);
+}
+ .buttonGroup_General--lessMargin {
+  margin: 0px;
+ }
 }
 
 }
