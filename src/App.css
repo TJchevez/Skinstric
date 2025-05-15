@@ -3,8 +3,10 @@
 }
 
 body {
+  padding: 20px;
+  margin: 0 auto;
+  display: block;
   font-family: "Roobert TRIAL", sans-serif;
-  padding: 40px 60px;
 }
 
 /* NAV */
@@ -198,7 +200,7 @@ input {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 1000px;
+  margin-top: 800px;
 }
 
 /* Button Style for the rest of the pages with less margin-top */
@@ -430,7 +432,6 @@ input {
     transform: translateY(0);
   }
 }
-
 
 /* RESULT PAGE */
 .result-page-wrapper {
@@ -1384,7 +1385,7 @@ input {
   font-size: 14px;
 }
 
-/* RESPONSIVE DIMENSIONS FOR HOME PAGE */
+/* DIMENSIONS FOR HOME PAGE */
 
 .home_dimension--section {
   display: none;
@@ -1417,6 +1418,45 @@ input {
     margin: 0px 28% 0px 0px;
   }
 }
+
+@media (max-width: 768px) { 
+ .home_dimension--section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .header__nav--rowStyle {
+    display: block;
+  }
+  @media (max-width: 375px) {
+    .home_dimension--section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(80%);
+  }
+
+  .header__nav-button {
+    transform: scale(80%);
+  }
+  }
+}
+
+/* RESPONSIVE DIMENSIONS FOR INTRODUCTION PAGE */
+ @media (max-width: 375px) {
+.buttonGroup {
+  margin-top: 600px;
+}
+.button__copy {
+  display: none;
+}
+.form-container {
+  transform: scale(80%);
+}
+.icon-wrapper {
+ transform: scale(60%);
+}
+ }
 
 /* RESPONSIVE DIMENSIONS FOR RESULTS PAGE */
 @media (max-width: 1025px) {
@@ -1479,7 +1519,6 @@ input {
 
 .camera_bottom-row span {
     font-size: 10px;
-    margin-bottom: 36px;
     padding: 0px 10px;
 }
 
@@ -1498,6 +1537,36 @@ display: none;
 
 .button-label {
   display: none;
+}
+
+@media (max-width: 375px) {
+.camera-bottom-instructions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.capture-button-full {
+  top: 0px;
+}
+.camera_bottom-row {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: scale(80%);
+}
+.camera-video-full {
+  object-fit: cover;
+  height: 100%;
+}
+
+.diamond-container {
+  margin: 100px auto;
+  transform: scale(80%);
+}
+ .buttonGroup_General--lessMargin {
+  margin: 0px;
+ }
 }
 
 }

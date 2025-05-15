@@ -21,7 +21,7 @@ function Home() {
     const diamondRight = diamondRightRef.current;
 
     const moveLeft = () => {
-      gsap.to(header, { x: -500, duration: 1.5, ease: "power2.out" });
+      gsap.to(header, { x: -300, duration: 1.5, ease: "power2.out" });
       header.classList.remove("align-center", "align-right");
       header.classList.add("align-left");
 
@@ -29,7 +29,7 @@ function Home() {
     };
 
     const moveRight = () => {
-      gsap.to(header, { x: 500, duration: 1.5, ease: "power2.out" });
+      gsap.to(header, { x: 300, duration: 1.5, ease: "power2.out" });
       header.classList.remove("align-center", "align-left");
       header.classList.add("align-right");
 
