@@ -1445,17 +1445,91 @@ input {
 /* RESPONSIVE DIMENSIONS FOR INTRODUCTION PAGE */
  @media (max-width: 375px) {
 .buttonGroup {
-  margin-top: 600px;
+  margin: 600px 40px;
 }
 .button__copy {
   display: none;
 }
 .form-container {
-  transform: scale(80%);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(60%);
 }
 .icon-wrapper {
  transform: scale(60%);
 }
+.loading-overlay {
+  transform: scale(80%);
+}
+ .demographics__headline-font {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .demographics__headline-subFont {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .demographic_columnLeft-result {
+    transform: scale(1.1);
+    margin-bottom: 30px;
+    padding-bottom: 5px;
+  }
+
+  .demographics__wrapper-columns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: scale(1);
+    gap: 20px;
+  }
+
+  .demographics__results-columnLeft,
+  .demographics__results-columnRight {
+    max-width: 320px;
+  }
+
+  .demographics__results-columnMiddle {
+    margin-left: 80px;
+  }
+
+  .demographics__donut-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .demographics__buttons-bottomWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+    padding: 20px 10px;
+  }
+
+  .demographics__button-reset,
+  .demographics__button-confirm {
+    width: 100px;
+    margin: 5px;
+  }
+
+  .demographics__aiEstimate-font {
+    font-size: 14px;
+    padding: 0 10px;
+  }
+
+  .button-wrapper-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  
+
  }
 
 /* RESPONSIVE DIMENSIONS FOR RESULTS PAGE */
@@ -1549,7 +1623,7 @@ display: none;
   top: 0px;
 }
 .camera_bottom-row {
-  margin: 0 auto;
+  margin: 10 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1565,7 +1639,7 @@ display: none;
   transform: scale(80%);
 }
  .buttonGroup_General--lessMargin {
-  margin: 0px;
+  margin: 10px;
  }
 }
 
