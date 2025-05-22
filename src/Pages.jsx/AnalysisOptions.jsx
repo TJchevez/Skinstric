@@ -17,7 +17,7 @@ function AnalysisOptions() {
         <br />
         Fix estimated information if needed.
       </p>
-      <div className="diamond-container hover-target">
+      <div className="diamond-container hover-target-analysis">
         <DiamondTrio />
         <Link to="/demographics">
           <div className="diamondAnalytics diamond-north">

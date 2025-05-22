@@ -342,6 +342,16 @@ input {
   opacity: 1;
 }
 
+.hover-target-analysis {
+  position: relative;
+  padding-top: 240px;
+  margin: 0 auto;
+}
+
+.hover-target-analysis:hover .diamond-stack-wrapper {
+  opacity: 1;
+}
+
 /* SUBMITTION - THANK YOU PAGE */
 
 .submittion_container-style {
@@ -1022,8 +1032,8 @@ input {
 .diamond-container {
   position: relative;
   width: 300px;
-  height: 300px;
-  margin: 400px auto;
+  height: 80px;
+  margin: 140px auto;
   text-decoration: none;
   color: inherit;
 }
@@ -1091,7 +1101,7 @@ input {
 }
 
 .analytic_bottom-buttons {
-  margin-top: 420px;
+  margin-top: 220px;
 }
 
 .analysis_font-paragraph {
@@ -1637,6 +1647,7 @@ display: none;
 .diamond-container {
   margin: 100px auto;
   transform: scale(80%);
+  padding: 10px;
 }
  .buttonGroup_General--lessMargin {
   margin: 10px;
