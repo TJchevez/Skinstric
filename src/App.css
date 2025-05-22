@@ -1645,9 +1645,7 @@ display: none;
 }
 
 .diamond-container {
-  margin: 100px auto;
   transform: scale(80%);
-  padding: 10px;
 }
  .buttonGroup_General--lessMargin {
   margin: 10px;
