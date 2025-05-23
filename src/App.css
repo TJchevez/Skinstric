@@ -1114,7 +1114,6 @@ input {
    display: flex;
   justify-content: space-between;
   align-items: stretch;
-  gap: 2rem;
   padding: 1rem 2rem;
 }
 .demographics__headline-font {
@@ -1276,6 +1275,7 @@ input {
 .donut {
   width: 360px;
   height: 360px;
+  padding: 0 10px;
 }
 
 .donut-bg {
@@ -1461,6 +1461,24 @@ input {
 }
 
 /* RESPONSIVE DIMENSIONS FOR INTRODUCTION PAGE */
+ @media (max-width: 650px) {
+   .demographics__headline-font {
+    font-size: 40px;
+    text-align: center;
+  }
+
+  .demographics__headline-subFont {
+    font-size: 16px;
+    text-align: center;
+    padding: 0;
+  }
+  .demographics_navButton-wrapper {
+    display: flex;
+    justify-content: start;
+    margin: 10px 0;
+  }
+ }
+
  @media (max-width: 375px) {
 .buttonGroup {
   margin: 600px 40px;
@@ -1573,6 +1591,28 @@ input {
 }
 
 /* RESPONSIVE DIMENSIONS FOR DEMOGRAPHICS PAGE */
+@media (max-width: 1330px) {
+.donut {
+  width: 260px;
+  height: 260px;
+  padding: 0 10px;
+}
+}
+@media (max-width: 1230px) {
+.donut {
+  width: 160px;
+  height: 160px;
+  padding: 0 10px;
+}
+}
+@media (max-width: 1140px) {
+  .demographics__wrapper-columns {
+    transform: scale(90%);
+  }
+.demographics__middle-content {
+  width: 200px;
+}
+}
 
 @media (max-width: 1000px) {
   .demographics__wrapper-columns {
@@ -1619,8 +1659,9 @@ input {
     margin-bottom: 1rem;
   }
    .donut {
-    width: 250px;
-    height: 250px;
+    width: 220px;
+    height: 220px;
+    padding-left: 50%;
   }
 
   .donut-percent {
