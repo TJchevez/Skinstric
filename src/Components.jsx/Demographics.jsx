@@ -124,24 +124,53 @@ function Demographics() {
           <div className="demographics__middle-content">
             <div className="demographics__category-label">
               {selectedCategory === "race" &&
-                formattedRace[0]?.key.toUpperCase()}
+                (confirmedResults.race || formattedRace[0]?.key)?.toUpperCase()}
               {selectedCategory === "age" &&
-                `${formattedAgeByConfidence[0]?.key.toUpperCase()} y.o`}
+                `${(
+                  confirmedResults.age || formattedAgeByConfidence[0]?.key
+                )?.toUpperCase()} y.o`}
               {selectedCategory === "gender" &&
-                formattedGender[0]?.key.toUpperCase()}
+                (
+                  confirmedResults.gender || formattedGender[0]?.key
+                )?.toUpperCase()}
             </div>
             <div className="demographics__donut-wrapper">
               {selectedCategory === "race" && formattedRace.length > 0 && (
-                <DonutChart percentage={parseFloat(formattedRace[0].value)} />
+                <DonutChart
+                  percentage={parseFloat(
+                    formattedRace.find(
+                      (item) =>
+                        item.key ===
+                        (confirmedResults.race || formattedRace[0]?.key)
+                    )?.value || 0
+                  )}
+                />
               )}
+
               {selectedCategory === "age" &&
                 formattedAgeByConfidence.length > 0 && (
                   <DonutChart
-                    percentage={parseFloat(formattedAgeByConfidence[0].value)}
+                    percentage={parseFloat(
+                      formattedAgeByConfidence.find(
+                        (item) =>
+                          item.key ===
+                          (confirmedResults.age ||
+                            formattedAgeByConfidence[0]?.key)
+                      )?.value || 0
+                    )}
                   />
                 )}
+
               {selectedCategory === "gender" && formattedGender.length > 0 && (
-                <DonutChart percentage={parseFloat(formattedGender[0].value)} />
+                <DonutChart
+                  percentage={parseFloat(
+                    formattedGender.find(
+                      (item) =>
+                        item.key ===
+                        (confirmedResults.gender || formattedGender[0]?.key)
+                    )?.value || 0
+                  )}
+                />
               )}
             </div>
           </div>

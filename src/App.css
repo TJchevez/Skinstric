@@ -1111,9 +1111,11 @@ input {
 
 /* DEMOGRAPHICS PAGE */
 .demographics__wrapper-columns {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+   display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 2rem;
+  padding: 1rem 2rem;
 }
 .demographics__headline-font {
   font-size: 72px;
@@ -1266,15 +1268,14 @@ input {
 
 /* DONUT CHART COMPONENT */
 .donut-chart {
-  width: 400px;
-  text-align: center;
-  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .donut {
-  width: 400px;
-  height: 400px;
-  transform: rotate(0deg);
+  width: 360px;
+  height: 360px;
 }
 
 .donut-bg {
@@ -1297,6 +1298,13 @@ input {
   dominant-baseline: middle;
   text-anchor: middle;
   font-size: 4px;
+}
+
+.donut-label {
+  margin-top: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
 }
 
 /* BAR CHART COMPONENT */
@@ -1494,7 +1502,6 @@ input {
     flex-direction: column;
     align-items: center;
     transform: scale(1);
-    gap: 20px;
   }
 
   .demographics__results-columnLeft,
@@ -1502,9 +1509,6 @@ input {
     max-width: 320px;
   }
 
-  .demographics__results-columnMiddle {
-    margin-left: 80px;
-  }
 
   .demographics__donut-wrapper {
     display: flex;
@@ -1569,18 +1573,67 @@ input {
 }
 
 /* RESPONSIVE DIMENSIONS FOR DEMOGRAPHICS PAGE */
-@media (max-width: 1350px) {
+
+@media (max-width: 1000px) {
   .demographics__wrapper-columns {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 1rem;
+    gap: 1.5rem;
   }
+
+  .demographics__results-columnLeft,
+  .demographics__results-columnMiddle,
+  .demographics__results-columnRight {
+    width: 100%;
+  }
+
   .demographics__middle-content {
-    width: 64%;
+    align-items: center;
+    text-align: center;
   }
+
   .demographics__category-label {
-    left: 500px;
+    font-size: 1.2rem;
   }
+
+  .demographics__donut-wrapper {
+    max-width: 250px;
+    margin: 0 auto;
+  }
+
+  .header_rightcolumn-fontWrapper {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+  }
+
+  .demographics__buttons-bottomWrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .button-wrapper-left {
+    margin-bottom: 1rem;
+  }
+   .donut {
+    width: 250px;
+    height: 250px;
+  }
+
+  .donut-percent {
+    font-size: 0.4rem;
+  }
+
+  .donut-label {
+    font-size: 0.9rem;
+  }
+  .header_rightcolumn-fontWrapper {
+    gap: 120px;
+      }
+ 
 }
 
 /* RESPONSIVE CAMERA CAPTURE FUNCTION  */
