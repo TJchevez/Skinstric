@@ -1,10 +1,10 @@
 import React, { useState, useRef } from "react";
 import NavForForms from "../Components.jsx/NavForForms";
 import GeneralButtons from "../Components.jsx/GeneralButtons";
-import { faCamera, faImage } from "@fortawesome/free-solid-svg-icons";
 import SpinningSquares from "../Components.jsx/SpinningSquares";
 import CameraNav from "../Components.jsx/CameraNav";
-import CircleIcon from "../Components.jsx/CircleIcon";
+import cameraIcon from "../assets/camera-icon.webp";
+import galleryIcon from "../assets/gallery-icon.webp";
 
 function Result() {
   const [imageBase64, setImageBase64] = useState(null);
@@ -117,7 +117,7 @@ function Result() {
             <div className="line-to-icon" />
             <div className="icon-stack">
               <SpinningSquares size={260} color="#0a0a0a"/>
-              <CircleIcon icon={faCamera} />
+              <img src={cameraIcon} alt="Camera" className="icon-image" />
             </div>
           </div>
 
@@ -128,7 +128,7 @@ function Result() {
               <div className="icon-stack">
                 <SpinningSquares size={260} color="#0a0a0a" />
                 <label htmlFor="image-upload" className="upload-label">
-                  <CircleIcon icon={faImage} />
+                  <img src={galleryIcon} alt="Gallery" className="icon-image" />
                 </label>
                 <input
                   type="file"
@@ -162,7 +162,7 @@ function Result() {
                     className="capture-button-full"
                     onClick={capturePhoto}
                   >
-                    <CircleIcon icon={faCamera} />
+                    <img src={cameraIcon} alt="Camera" className="icon-image" />
                   </button>
                 </>
               )}
@@ -294,7 +294,7 @@ function Result() {
 
             <div className="spinner-with-icon">
               <SpinningSquares size={400} color="#0a0a0a" />
-              <CircleIcon icon={faCamera} className="spinner-camera-icon" />
+              <img src={cameraIcon} alt="Camera" className="icon-image" />
             </div>
             <div className="camera-loading-instructions">
               <span className="camera_loading-text">

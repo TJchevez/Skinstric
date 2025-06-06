@@ -510,7 +510,8 @@ input {
   font-weight: 500;
   max-width: 160px;
   text-align: left;
-  margin-bottom: 180px;
+  margin-bottom: 160px;
+  margin-left: 10px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -522,16 +523,16 @@ input {
   font-weight: 500;
   max-width: 160px;
   text-align: right;
-  margin-top: 180px;
+  margin-top: 240px;
 }
 
 .line-to-icon {
-  width: 200px;
+  width: 160px;
   height: 2px;
   background-color: black;
   position: absolute;
   top: 120px;
-  right: 142px;
+  right: 140px;
   transform: rotate(-24deg);
   transform-origin: left center;
 }
@@ -549,13 +550,13 @@ input {
   transform: translateY(-50%);
 }
 .line-to-icon-right {
-  width: 176px;
+  width: 160px;
   height: 2px;
   background-color: black;
   position: absolute;
   bottom: 34px;
-  right: 130px;
-  transform: rotate(-20deg);
+  right: 140px;
+  transform: rotate(-26deg);
   transform-origin: left center;
 }
 
@@ -567,7 +568,7 @@ input {
   border-style: solid;
   border-radius: 50%;
   position: absolute;
-  right: 172px;
+  right: 160px;
   top: 30%;
   transform: translateY(-50%);
 }
@@ -973,6 +974,12 @@ input {
   position: relative;
   display: inline-block;
   margin: 20px 0;
+}
+
+.icon-image {
+  width: 136px;
+  height: 136px;
+  object-fit: contain;
 }
 
 .spinner-camera-icon {
