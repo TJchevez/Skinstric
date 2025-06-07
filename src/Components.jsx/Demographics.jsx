@@ -39,6 +39,7 @@ function Demographics() {
     age: null,
     gender: null,
   });
+
   const storedData = JSON.parse(localStorage.getItem("demographic_result"));
   if (!storedData) return <p>No demographic data found.</p>;
 
@@ -49,14 +50,9 @@ function Demographics() {
   const formattedAgeByLabel = sortAgeLabels(age);
   const formattedGender = sortAndFormat(gender);
 
-  const displayResults = {
-    race: confirmedResults.race || formattedRace[0]?.key,
-    age: confirmedResults.age || formattedAgeByConfidence[0]?.key,
-    gender: confirmedResults.gender || formattedGender[0]?.key,
-  };
-
   const categoryOrder = ["race", "age", "gender"];
   const currentIndex = categoryOrder.indexOf(selectedCategory);
+
   const goToPreviousCategory = () => {
     setSelectedCategory(
       categoryOrder[
@@ -65,12 +61,22 @@ function Demographics() {
     );
     setHasInteracted(true);
   };
+
   const goToNextCategory = () => {
     setSelectedCategory(
       categoryOrder[(currentIndex + 1) % categoryOrder.length]
     );
     setHasInteracted(true);
   };
+
+  const activeKey =
+    userSelections[selectedCategory] ||
+    confirmedResults[selectedCategory] ||
+    (selectedCategory === "race"
+      ? formattedRace[0]?.key
+      : selectedCategory === "age"
+      ? formattedAgeByConfidence[0]?.key
+      : formattedGender[0]?.key);
 
   return (
     <>
@@ -81,10 +87,7 @@ function Demographics() {
           hasInteracted ? "fade-in" : "hidden"
         }`}
       >
-        <div
-          className="diamond-button hover-target"
-          onClick={goToPreviousCategory}
-        >
+        <div className="diamond-button hover-target" onClick={goToPreviousCategory}>
           <div className="inner-diamond" />
           <div className="mini-triangle-left" />
         </div>
@@ -100,75 +103,64 @@ function Demographics() {
       <div className="demographics__wrapper-columns">
         {/* Left Column */}
         <div className="demographics__results-columnLeft">
-          {["race", "age", "gender"].map((category) => (
-            <div
-              key={category}
-              className={`demographic_columnLeft-result ${
-                selectedCategory === category ? "active" : ""
-              }`}
-              onClick={() => {
-                setSelectedCategory(category);
-                setHasInteracted(true);
-              }}
-            >
-              <h4>{category.toUpperCase()}</h4>
-              <p className="demographic_textTransform-uppercase">
-                {displayResults[category]}
-              </p>
-            </div>
-          ))}
+          {["race", "age", "gender"].map((category) => {
+            const display =
+              userSelections[category] ||
+              confirmedResults[category] ||
+              (category === "race"
+                ? formattedRace[0]?.key
+                : category === "age"
+                ? formattedAgeByConfidence[0]?.key
+                : formattedGender[0]?.key);
+
+            return (
+              <div
+                key={category}
+                className={`demographic_columnLeft-result ${
+                  selectedCategory === category ? "active" : ""
+                }`}
+                onClick={() => {
+                  setSelectedCategory(category);
+                  setHasInteracted(true);
+                }}
+              >
+                <h4>{category.toUpperCase()}</h4>
+                <p className="demographic_textTransform-uppercase">
+                  {category === "age" ? `${display} y.o` : display}
+                </p>
+              </div>
+            );
+          })}
         </div>
 
         {/* Middle Column */}
         <div className="demographics__results-columnMiddle">
           <div className="demographics__middle-content">
             <div className="demographics__category-label">
-              {selectedCategory === "race" &&
-                (confirmedResults.race || formattedRace[0]?.key)?.toUpperCase()}
-              {selectedCategory === "age" &&
-                `${(
-                  confirmedResults.age || formattedAgeByConfidence[0]?.key
-                )?.toUpperCase()} y.o`}
-              {selectedCategory === "gender" &&
-                (
-                  confirmedResults.gender || formattedGender[0]?.key
-                )?.toUpperCase()}
+              {selectedCategory === "race" && activeKey?.toUpperCase()}
+              {selectedCategory === "age" && `${activeKey?.toUpperCase()} y.o`}
+              {selectedCategory === "gender" && activeKey?.toUpperCase()}
             </div>
             <div className="demographics__donut-wrapper">
               {selectedCategory === "race" && formattedRace.length > 0 && (
                 <DonutChart
                   percentage={parseFloat(
-                    formattedRace.find(
-                      (item) =>
-                        item.key ===
-                        (confirmedResults.race || formattedRace[0]?.key)
-                    )?.value || 0
+                    formattedRace.find((item) => item.key === activeKey)?.value || 0
                   )}
                 />
               )}
-
-              {selectedCategory === "age" &&
-                formattedAgeByConfidence.length > 0 && (
-                  <DonutChart
-                    percentage={parseFloat(
-                      formattedAgeByConfidence.find(
-                        (item) =>
-                          item.key ===
-                          (confirmedResults.age ||
-                            formattedAgeByConfidence[0]?.key)
-                      )?.value || 0
-                    )}
-                  />
-                )}
-
+              {selectedCategory === "age" && formattedAgeByConfidence.length > 0 && (
+                <DonutChart
+                  percentage={parseFloat(
+                    formattedAgeByConfidence.find((item) => item.key === activeKey)
+                      ?.value || 0
+                  )}
+                />
+              )}
               {selectedCategory === "gender" && formattedGender.length > 0 && (
                 <DonutChart
                   percentage={parseFloat(
-                    formattedGender.find(
-                      (item) =>
-                        item.key ===
-                        (confirmedResults.gender || formattedGender[0]?.key)
-                    )?.value || 0
+                    formattedGender.find((item) => item.key === activeKey)?.value || 0
                   )}
                 />
               )}
@@ -200,10 +192,7 @@ function Demographics() {
 
       {/* Bottom Buttons */}
       <div className="demographics__buttons-bottomWrapper">
-        <div
-          className="button-wrapper-left"
-          onClick={() => window.history.back()}
-        >
+        <div className="button-wrapper-left" onClick={() => window.history.back()}>
           <div className="diamond-button hover-target">
             <div className="inner-diamond" />
             <div className="mini-triangle-left" />
